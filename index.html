@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas 2 Immersive - Ruangan Interior 3D + WebXR</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background: #0a0b10;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+        canvas {
+            display: block;
+        }
+        #vrBtn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 10;
+            padding: 12px 18px;
+            border: none;
+            border-radius: 8px;
+            background: #4ecdc4;
+            color: #001628;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            transition: all 0.2s ease;
+        }
+        #vrBtn:disabled {
+            background: #555;
+            color: #aaa;
+            cursor: not-allowed;
+            box-shadow: none;
+        }
+        #info {
+            position: fixed;
+            top: 85px;
+            left: 20px;
+            z-index: 10;
+            color: white;
+            background: rgba(15, 15, 26, 0.85);
+            padding: 15px 20px;
+            border-radius: 10px;
+            font-size: 14px;
+            line-height: 1.6;
+            max-width: 300px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            pointer-events: none; /* Supaya klik mouse tembus ke canvas 3D */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+        #info h3 {
+            margin: 0 0 8px 0;
+            color: #4ecdc4;
+        }
+    </style>
+</head>
+<body>
+
+    <button id="vrBtn" disabled>Mengecek WebXR...</button>
+    
+    <div id="info">
+        <h3>Ruangan Interior 3D</h3>
+        <p id="status">Arahkan mouse ke objek untuk melihat efek hover, dan klik objek untuk melihat detail informasi barang.</p>
+    </div>
+
+    <canvas id="c"></canvas>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>
